@@ -41,10 +41,6 @@
       type: "string"
       default: "password"
 
-
-mailcatcher:
-  scale: 1
-  start_on_create: true
 Keycloak:
   scale: 1
   start_on_create: true

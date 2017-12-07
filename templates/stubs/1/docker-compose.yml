@@ -1,0 +1,19 @@
+version: '2'
+services:
+  emailrest:
+    image: ${registry_url}/emailrestinterface:${image_version}
+    stdin_open: true
+    tty: true
+    ports:
+    - 2000:80/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  mailcatcher:
+    image: tophfr/mailcatcher
+    stdin_open: true
+    tty: true
+    ports:
+    - 1080:80/tcp
+    - 1025:25/tcp
+    labels:
+      io.rancher.container.pull_image: always

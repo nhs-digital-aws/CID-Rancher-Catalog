@@ -1,14 +1,5 @@
 version: '2'
 services:
-  mailcatcher:
-    image: tophfr/mailcatcher
-    stdin_open: true
-    tty: true
-    ports:
-    - 1080:80/tcp
-    - 1025:25/tcp
-    labels:
-      io.rancher.container.pull_image: always
   Keycloak:
     image: ${registry_url}/keycloak-cid:${image_version}
     environment:
