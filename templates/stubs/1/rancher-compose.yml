@@ -16,6 +16,30 @@
       required: true
       type: "string"
       default: "latest"
+    - variable: "email_gateway"
+      description: "SMTP server URI or IP address (including port if necessary)"
+      label: "Worker email gateway URI"
+      required: true
+      type: "string"
+      default: "stub-email-gateway.co.uk:25"
+    - variable: "email_suffix"
+      description: "SMS Recipient email suffix (To: address)"
+      label: "Recipient email suffix"
+      required: true
+      type: "string"
+      default: "@sms.nhs.net"
+    - variable: "email_address"
+      description: "Login email address (also From: address)"
+      label: "Login email address"
+      required: true
+      type: "string"
+      default: "ods.test@email.net"
+    - variable: "email_password"
+      description: "Login password"
+      label: "Recipient email suffix"
+      required: true
+      type: "string"
+      default: ""
 
 emailrest:
   scale: 1

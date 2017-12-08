@@ -5,15 +5,21 @@ services:
     stdin_open: true
     tty: true
     ports:
-    - 2000:80/tcp
+    - 10010:10010/tcp
     labels:
       io.rancher.container.pull_image: always
+    environment:
+      EMAIL_LOGIN: "False"
+      EMAIL_USE_TLS: "False"
+      MESSAGE_WORKER_EMAIL_GATEWAY_URI: ${email_gateway}
+      SMS_RECIPIENT_EMAIL_SUFFIX: ${email_suffix}
+      WORKER_EMAIL_ADDRESS: ${email_address}
+      WORKER_EMAIL_PASSWORD: ${email_password}
   mailcatcher:
     image: tophfr/mailcatcher
     stdin_open: true
     tty: true
     ports:
     - 1080:80/tcp
-    - 1025:25/tcp
     labels:
       io.rancher.container.pull_image: always
