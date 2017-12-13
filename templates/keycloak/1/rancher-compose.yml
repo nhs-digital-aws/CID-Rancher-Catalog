@@ -41,6 +41,6 @@
       type: "string"
       default: "password"
 
-Keycloak:
+keycloak:
   scale: 1
   start_on_create: true

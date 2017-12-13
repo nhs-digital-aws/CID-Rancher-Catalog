@@ -1,6 +1,6 @@
 version: '2'
 services:
-  Keycloak:
+  keycloak:
     image: ${registry_url}/keycloak-cid:${image_version}
     environment:
       POSTGRES_HOST: ${postgres_host}

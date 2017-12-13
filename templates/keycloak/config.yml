@@ -1,5 +1,5 @@
 name: NHS Digital - CID Keycloak Stack
 description: |
-  Keycloak
+  Keycloak Auth Stack
 version: 0.1
 category: NHS-Digital
