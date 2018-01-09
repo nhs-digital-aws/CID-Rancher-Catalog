@@ -1,0 +1,15 @@
+version: '2'
+services:
+  keycloak:
+    image: ${registry_url}/keycloak-cid:${image_version}
+    environment:
+      POSTGRES_HOST: ${postgres_host}
+      POSTGRES_PORT: '5432'
+      POSTGRES_USERNAME: ${postgres_user}
+      POSTGRES_PASSWORD: ${postgres_password}
+    stdin_open: true
+    tty: true
+    ports:
+    - 80:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
