@@ -1,13 +1,13 @@
 version: '2'
 services:
   verify-proxy:
-    image: ${registry_url}/verify-proxy-cid:${image_version}
+    image: ${registry_url}/verify-proxy-cid:${vp_image_version}
     stdin_open: true
     tty: true
     labels:
       io.rancher.container.pull_image: always
   verify-service-provider:
-    image: ${registry_url}/verify-service-provider-cid:${image_version}
+    image: ${registry_url}/verify-service-provider-cid:${vsp_image_version}
     environment:
       logLevel: "INFO"
       port: "50400"
