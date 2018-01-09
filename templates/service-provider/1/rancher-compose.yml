@@ -41,6 +41,9 @@
       type: "string"
       default: "password"
 
-keycloak:
+verify-proxy:
+  scale: 1
+  start_on_create: true
+verify-service-provider:
   scale: 1
   start_on_create: true
