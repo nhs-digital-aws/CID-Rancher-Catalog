@@ -10,36 +10,18 @@
       required: true
       type: "string"
       default: "242530456444.dkr.ecr.eu-west-2.amazonaws.com"
-    - variable: "image_version"
-      description: "Please enter your chosen image version"
+    - variable: "vp_image_version"
+      description: "Please enter your chosen VP image version"
       label: "Image Version"
       required: true
       type: "string"
       default: "latest"
-    - variable: "postgres_host"
-      description: "Please enter your RDS Host FQDN/IP"
-      label: "KeyCloak Postgres host"
+    - variable: "vsp_image_version"
+      description: "Please enter your chosen VSP image version"
+      label: "Image Version"
       required: true
       type: "string"
-      default: "localhost"
-    - variable: "postgres_port"
-      description: "Please enter your KeyCloak Postgres Port"
-      label: "KeyCloak Postgres Port"
-      required: true
-      type: "string"
-      default: "5432"
-    - variable: "postgres_user"
-      description: "Please enter your KeyCloak Postgres User"
-      label: "KeyCloak Postgres Username"
-      required: true
-      type: "string"
-      default: "keycloak"
-    - variable: "postgres_password"
-      description: "Please enter your KeyCloak Postgres Password"
-      label: "KeyCloak Postgres Password"
-      required: true
-      type: "string"
-      default: "password"
+      default: "latest"
 
 verify-proxy:
   scale: 1
