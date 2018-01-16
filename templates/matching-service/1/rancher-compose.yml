@@ -1,0 +1,31 @@
+.catalog:
+  name: "NHS Digital - CID - Matching Service Stack"
+  version: "0.1"
+  description: "NHS Digital - CID - Matching Service Stack"
+  minimum_rancher_version: "v1.1.4"
+  questions:
+    - variable: "registry_url"
+      description: "Please enter your Registry"
+      label: "Registry URL"
+      required: true
+      type: "string"
+      default: "242530456444.dkr.ecr.eu-west-2.amazonaws.com"
+    - variable: "msa_image_version"
+      description: "Please enter your chosen MSA image version"
+      label: "Image Version"
+      required: true
+      type: "string"
+      default: "latest"
+    - variable: "lms_image_version"
+      description: "Please enter your chosen LMS image version"
+      label: "Image Version"
+      required: true
+      type: "string"
+      default: "latest"
+
+matching-service-adapter:
+  scale: 1
+  start_on_create: true
+local-matching-service:
+  scale: 1
+  start_on_create: true

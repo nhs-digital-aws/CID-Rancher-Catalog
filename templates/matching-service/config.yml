@@ -1,0 +1,5 @@
+name: NHS Digital - CID Matching Service Stack
+description: |
+  Matching Service Stack
+version: 0.1
+category: NHS-Digital

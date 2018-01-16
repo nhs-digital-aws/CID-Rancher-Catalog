@@ -1,0 +1,17 @@
+version: '2'
+services:
+  matching-service-adapter:
+    image: ${registry_url}/verify-msa-cid:${msa_image_version}
+    stdin_open: true
+    tty: true
+    ports:
+    - 8080:8080/tcp
+    - 8081:8081/tcp
+    labels:
+      io.rancher.container.pull_image: always
+  local-matching-service:
+    image: ${registry_url}/local-matching-service-cid:${lms_image_version}
+    stdin_open: true
+    tty: true
+    labels:
+      io.rancher.container.pull_image: always
