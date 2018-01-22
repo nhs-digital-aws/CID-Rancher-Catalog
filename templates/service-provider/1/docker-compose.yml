@@ -4,6 +4,8 @@ services:
     image: ${registry_url}/verify-proxy-cid:${vp_image_version}
     stdin_open: true
     tty: true
+    ports:
+    - 8082:9000/tcp
     labels:
       io.rancher.container.pull_image: always
   verify-service-provider:
