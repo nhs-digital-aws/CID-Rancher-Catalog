@@ -26,6 +26,26 @@
 matching-service-adapter:
   scale: 1
   start_on_create: true
+  health_check:
+    port: 8081
+    interval: 5000
+    unhealthy_threshold: 3
+    request_line: 'GET "/healthcheck" "HTTP/1.1\r\nHost: www"'
+    healthy_threshold: 1
+    response_timeout: 2000
+    initializing_timeout: 10000
+    reinitializing_timeout: 10000
+    strategy: recreate
 local-matching-service:
   scale: 1
   start_on_create: true
+  health_check:
+    port: 50130
+    interval: 5000
+    unhealthy_threshold: 3
+    request_line: 'POST "/local-matching/match" "HTTP/1.1\r\nHost: www"'
+    healthy_threshold: 1
+    response_timeout: 2000
+    initializing_timeout: 10000
+    reinitializing_timeout: 10000
+    strategy: recreate
