@@ -1,12 +1,23 @@
 version: '2'
 services:
+  matching-service-proxy:
+    image: ${registry_url}/verify-msa-proxy-cid:latest
+    ports:
+    - 443:443/tcp
+    - 444:444/tcp
+    labels:
+      io.rancher.container.pull_image: always
+    environment:
+      ENV_SHORTCODE: int
+      AWS_ACCOUNT_ID: ${aws_account_id}
+      AWS_REGION: ${region}
   matching-service-adapter:
     image: ${registry_url}/verify-msa-cid:${msa_image_version}
     stdin_open: true
     tty: true
-    ports:
-    - 8080:8080/tcp
-    - 8081:8081/tcp
+    # ports:
+    # - 8080:8080/tcp
+    # - 8081:8081/tcp
     labels:
       io.rancher.container.pull_image: always
   local-matching-service:
