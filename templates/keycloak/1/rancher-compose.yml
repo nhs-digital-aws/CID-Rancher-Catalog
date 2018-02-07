@@ -48,7 +48,7 @@ keycloak:
     port: 8080
     interval: 5000
     unhealthy_threshold: 3
-    request_line: 'GET "/cicauth/realms/NHS/" "HTTP/1.1\r\nHost: keycloak"'
+    request_line: "GET '/cicauth/realms/NHS/' 'HTTP/1.1\r\nHost: keycloak'"
     healthy_threshold: 1
     response_timeout: 1000
     initializing_timeout: 10000
