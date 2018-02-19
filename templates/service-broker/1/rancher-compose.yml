@@ -1,0 +1,20 @@
+.catalog:
+  name: "NHS Digital - Service Broker Stub"
+  version: "0.1"
+  description: "NHS Digital - Service Broker Stub"
+  minimum_rancher_version: "v1.1.4"
+  questions:
+    - variable: "registry_url"
+      description: "Please enter your Registry"
+      label: "Registry URL"
+      required: true
+      type: "string"
+      default: "242530456444.dkr.ecr.eu-west-2.amazonaws.com"
+    - variable: "image_version"
+      description: "Please enter your chosen image version"
+      label: "Image Version"
+      required: true
+      type: "string"
+      default: "latest"
+
+

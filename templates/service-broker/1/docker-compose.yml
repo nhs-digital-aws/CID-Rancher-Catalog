@@ -1,0 +1,10 @@
+version: '2'
+services:
+  service-broker:
+    image: ${registry_url}/service-broker-stub:${image_version}
+    stdin_open: true
+    tty: true
+    ports:
+    - 8083:8080/tcp
+    labels:
+      io.rancher.container.pull_image: always
