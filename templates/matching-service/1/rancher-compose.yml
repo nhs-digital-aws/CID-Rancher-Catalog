@@ -16,12 +16,42 @@
       required: true
       type: "string"
       default: "latest"
+    - variable: "msa_signing_cert"
+      description: "Please enter the MSA Signing certificate file name"
+      label: "MSA Signing Certificate"
+      required: true
+      type: "string"
+      default: ""
+    - variable: "msa_signing_key"
+      description: "Please enter the MSA Signing key file name"
+      label: "MSA Signing Key"
+      required: true
+      type: "string"
+      default: ""
+    - variable: "msa_encryption_cert"
+      description: "Please enter the MSA Encryption certificate file name"
+      label: "MSA Encryption Certificate"
+      required: true
+      type: "string"
+      default: ""
+    - variable: "msa_encryption_key"
+      description: "Please enter the MSA Encryption key file name"
+      label: "MSA Encryption Key"
+      required: true
+      type: "string"
+      default: ""
     - variable: "lms_image_version"
       description: "Please enter your chosen LMS image version"
       label: "Image Version"
       required: true
       type: "string"
       default: "latest"
+    - variable: "env_shortcode"
+      description: "Please enter the shortcode of your environment"
+      label: "Environment Shortcode"
+      required: true
+      default: ""
+      type: "string"
 
 matching-service-proxy:
   scale: 1
