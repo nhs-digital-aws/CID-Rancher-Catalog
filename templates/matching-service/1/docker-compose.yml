@@ -12,10 +12,6 @@ services:
       AWS_ACCOUNT_ID: ${aws_account_id}
       AWS_REGION: ${aws_region}
       ENV_SHORTCODE: ${env_shortcode}
-      MSA_SIGNING_CERT: ${msa_signing_cert}
-      MSA_SIGNING_KEY: ${msa_signing_key}
-      MSA_ENCRYPTION_CERT: ${msa_encryption_cert}
-      MSA_ENCRYPTION_KEY: ${msa_encryption_key}
   matching-service-adapter:
     image: ${registry_url}/verify-msa-cid:${msa_image_version}
     stdin_open: true
@@ -25,6 +21,14 @@ services:
     # - 8081:8081/tcp
     labels:
       io.rancher.container.pull_image: always
+    environment:
+      AWS_ACCOUNT_ID: ${aws_account_id}
+      AWS_REGION: ${aws_region}
+      ENV_SHORTCODE: "int"
+      MSA_SIGNING_CERT: ${msa_signing_cert}
+      MSA_SIGNING_KEY: ${msa_signing_key}
+      MSA_ENCRYPTION_CERT: ${msa_encryption_cert}
+      MSA_ENCRYPTION_KEY: ${msa_encryption_key}
   local-matching-service:
     image: ${registry_url}/local-matching-service-cid:${lms_image_version}
     stdin_open: true
