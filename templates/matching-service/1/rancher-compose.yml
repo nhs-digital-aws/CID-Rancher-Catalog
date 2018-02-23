@@ -52,6 +52,18 @@
       required: true
       default: ""
       type: "string"
+    - variable: "aws_account_id"
+      description: "The AWS account ID"
+      label: "AWS Account ID"
+      required: true
+      default: ""
+      type: "string"
+    - variable: "aws_region"
+      description: "The AWS region"
+      label: "AWS Region"
+      required: true
+      default: ""
+      type: "string"
 
 matching-service-proxy:
   scale: 1

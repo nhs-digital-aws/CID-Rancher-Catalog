@@ -8,9 +8,9 @@ services:
     labels:
       io.rancher.container.pull_image: always
     environment:
-      ENV_SHORTCODE: int
+      ENV_SHORTCODE: "int"
       AWS_ACCOUNT_ID: ${aws_account_id}
-      AWS_REGION: ${region}
+      AWS_REGION: ${aws_region}
       ENV_SHORTCODE: ${env_shortcode}
       MSA_SIGNING_CERT: ${msa_signing_cert}
       MSA_SIGNING_KEY: ${msa_signing_key}
