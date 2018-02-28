@@ -2,6 +2,9 @@ version: '2'
 services:
   verify-proxy:
     image: ${registry_url}/verify-proxy-cid:${vp_image_version}
+    environment:
+      DOMAIN: ${domain}
+      SUB_DOMAIN: ${sub_domain}
     stdin_open: true
     tty: true
     ports:
