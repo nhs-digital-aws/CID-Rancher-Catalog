@@ -17,13 +17,13 @@ services:
       hubMetadataURL: "https://compliance-tool-reference.ida.digital.cabinet-office.gov.uk/SAML2/metadata/federation"
       hubSSOLocation: "https://compliance-tool-reference.ida.digital.cabinet-office.gov.uk/SAML2/SSO"
       logLevel: "INFO"
-      msaEntityId: "http://www.nhs-cid.gov.uk/SAML2/MD"
+      msaEntityId: "https://msa.${env_shortcode}.signin.nhs.uk/matching-service/SAML2/MD"
       msaMetadataURL: "http://matching-service-adapter.matching-service.rancher.internal:8080/matching-service/SAML2/metadata"
       port: "50400"
       samlPrimaryEncryptionKey: "${vsp_primary_encryption_key}"
       samlSecondaryEncryptionKey: ""
       samlSigningKey: "${vsp_primary_signing_key}"
-      serviceEntityId: "http://www.nhs-cid.gov.uk/verify-service-provider"
+      serviceEntityId: "https://vp.${env_shortcode}.signin.nhs.uk/verify-proxy/"
     stdin_open: true
     tty: true
     ports:
