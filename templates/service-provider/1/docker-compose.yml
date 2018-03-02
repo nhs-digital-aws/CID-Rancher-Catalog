@@ -14,16 +14,21 @@ services:
   verify-service-provider:
     image: ${registry_url}/verify-service-provider-cid:${vsp_image_version}
     environment:
+      AWS_ACCOUNT_ID: ${aws_account_id}
+      AWS_REGION: ${aws_region}
+      ENV_SHORTCODE: "${env_shortcode}"
       hubMetadataURL: "https://compliance-tool-reference.ida.digital.cabinet-office.gov.uk/SAML2/metadata/federation"
       hubSSOLocation: "https://compliance-tool-reference.ida.digital.cabinet-office.gov.uk/SAML2/SSO"
       logLevel: "INFO"
       msaEntityId: "https://msa.${env_shortcode}.signin.nhs.uk/matching-service/SAML2/MD"
       msaMetadataURL: "http://matching-service-adapter.matching-service.rancher.internal:8080/matching-service/SAML2/metadata"
       port: "50400"
-      #samlPrimaryEncryptionKey: "${vsp_primary_encryption_key}"
+      #samlPrimaryEncryptionKey:  "${vsp_primary_encryption_key}"
       samlSecondaryEncryptionKey: ""
       #samlSigningKey: "${vsp_primary_signing_key}"
       serviceEntityId: "https://vp.${env_shortcode}.signin.nhs.uk/verify-proxy/"
+      VSP_SIGNING_KEY: "${vsp_primary_signing_key}"
+      VSP_ENCRYPTION_KEY: "${vsp_primary_encryption_key}"
     stdin_open: true
     tty: true
     ports:

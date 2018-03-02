@@ -20,7 +20,7 @@ services:
     environment:
       AWS_ACCOUNT_ID: ${aws_account_id}
       AWS_REGION: ${aws_region}
-      ENV_SHORTCODE: "int"
+      ENV_SHORTCODE: "${env_shortcode}"
       HUB_TRUSTSTORE_FILE_PATH: ${msa_hub_truststore_file_path}
       HUB_TRUSTSTORE_PASSWORD: ${msa_hub_truststore_password}
       LMS_ACCOUNT_CREATION_URL: ${msa_lms_account_creation_url}
