@@ -27,8 +27,8 @@ services:
       LMS_MATCH_URL: ${msa_lms_match_url}
       METADATA_TRUSTSTORE_FILE_PATH: ${msa_metadata_truststore_file_path}
       METADATA_TRUSTSTORE_PASSWORD: ${msa_metadata_truststore_password}
-      MSA_ENTITY_ID: https://msa.${env_shortcode}.signin.nhs.uk/matching-service/SAML2/MD
-      MSA_EXTERNAL_URL: ${msa_external_url}
+      MSA_ENTITY_ID: https://msa.${env_shortcode}.${domain}/matching-service/SAML2/MD
+      MSA_EXTERNAL_URL: https://msa.${env_shortcode}.${domain}/matching-service/POST
       MSA_SIGNING_CERT: ${msa_signing_cert}
       MSA_SIGNING_KEY: ${msa_signing_key}
       MSA_ENCRYPTION_CERT: ${msa_encryption_cert}
