@@ -8,18 +8,33 @@ services:
     labels:
       io.rancher.container.pull_image: always
     environment:
-      ENV_SHORTCODE: int
       AWS_ACCOUNT_ID: ${aws_account_id}
-      AWS_REGION: ${region}
+      AWS_REGION: ${aws_region}
+      ENV_SHORTCODE: "${env_shortcode}"
   matching-service-adapter:
     image: ${registry_url}/verify-msa-cid:${msa_image_version}
     stdin_open: true
     tty: true
-    # ports:
-    # - 8080:8080/tcp
-    # - 8081:8081/tcp
     labels:
       io.rancher.container.pull_image: always
+    environment:
+      AWS_ACCOUNT_ID: ${aws_account_id}
+      AWS_REGION: ${aws_region}
+      ENV_SHORTCODE: "${env_shortcode}"
+      HUB_TRUSTSTORE_FILE_PATH: ${msa_hub_truststore_file_path}
+      HUB_TRUSTSTORE_PASSWORD: ${msa_hub_truststore_password}
+      LMS_ACCOUNT_CREATION_URL: ${msa_lms_account_creation_url}
+      LMS_MATCH_URL: ${msa_lms_match_url}
+      METADATA_TRUSTSTORE_FILE_PATH: ${msa_metadata_truststore_file_path}
+      METADATA_TRUSTSTORE_PASSWORD: ${msa_metadata_truststore_password}
+      MSA_ENTITY_ID: https://msa.${env_shortcode}.${domain}/matching-service/SAML2/MD
+      MSA_EXTERNAL_URL: https://msa.${env_shortcode}.${domain}/matching-service/POST
+      MSA_SIGNING_CERT: ${msa_signing_cert}
+      MSA_SIGNING_KEY: ${msa_signing_key}
+      MSA_ENCRYPTION_CERT: ${msa_encryption_cert}
+      MSA_ENCRYPTION_KEY: ${msa_encryption_key}
+      VERIFY_FEDERATION_METADATA_URL: ${msa_verify_federation_metadata_url}
+      VERIFY_SAML_SSO_URL: ${msa_verify_saml_sso_url}
   local-matching-service:
     image: ${registry_url}/local-matching-service-cid:${lms_image_version}
     stdin_open: true
