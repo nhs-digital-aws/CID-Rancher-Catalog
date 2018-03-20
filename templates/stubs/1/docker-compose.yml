@@ -1,7 +1,7 @@
 version: '2'
 services:
   emailrest:
-    image: ${registry_url}/cid/emailrestinterface:${image_version}
+    image: ${registry_url}/emailrestinterface:${image_version}
     stdin_open: true
     tty: true
     ports:
