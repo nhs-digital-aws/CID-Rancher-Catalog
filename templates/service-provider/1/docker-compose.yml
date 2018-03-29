@@ -17,8 +17,8 @@ services:
       AWS_ACCOUNT_ID: ${aws_account_id}
       AWS_REGION: ${aws_region}
       ENV_SHORTCODE: "${env_shortcode}"
-      HUB_METADATA_URL: "https://compliance-tool-reference.ida.digital.cabinet-office.gov.uk/SAML2/metadata/federation"
-      HUB_SSO_LOCATION: "https://compliance-tool-reference.ida.digital.cabinet-office.gov.uk/SAML2/SSO"
+      HUB_METADATA_URL: "${vsp_verify_federation_metadata_url}"
+      HUB_SSO_LOCATION: "${vsp_verify_saml_sso_url}"
       MSA_ENTITY_ID: "https://msa.${env_shortcode}.signin.nhs.uk/matching-service/SAML2/MD"
       MSA_METADATA_URL: "http://matching-service-adapter.matching-service.rancher.internal:8080/matching-service/SAML2/metadata"
       SERVICE_ENTITY_ID: "https://vp.${env_shortcode}.signin.nhs.uk/verify-proxy/"
