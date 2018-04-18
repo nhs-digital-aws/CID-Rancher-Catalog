@@ -5,6 +5,7 @@ services:
     environment:
       DOMAIN: ${domain}
       SUB_DOMAIN: ${sub_domain}
+      VSP_URL: "http://verify-service-provider.service-provider.rancher.internal:50400"
     stdin_open: true
     tty: true
     ports:
