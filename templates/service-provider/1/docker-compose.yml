@@ -3,6 +3,8 @@ services:
   verify-proxy:
     image: ${registry_url}/verify-proxy-cid:${vp_image_version}
     environment:
+      CLIENT_ID: "verify_client"
+      CLIENT_SECRET: "Dfdaei$2kdalf"
       DOMAIN: ${domain}
       SUB_DOMAIN: ${sub_domain}
       VSP_URL: "http://verify-service-provider.service-provider.rancher.internal:50400"
