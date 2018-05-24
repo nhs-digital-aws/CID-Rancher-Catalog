@@ -3,9 +3,12 @@ services:
   verify-proxy:
     image: ${registry_url}/verify-proxy-cid:${vp_image_version}
     environment:
-      CLIENT_ID: "verify_client"
-      CLIENT_SECRET: "Dfdaei$$2kdalf"
+      CLIENT_ID: ${vp_client_id}
+      CLIENT_SECRET: ${vp_client_secret}
       DOMAIN: ${domain}
+      REDIRECT_URI_0: "${vp_redirect_url_0}"
+      REDIRECT_URI_1: "${vp_redirect_url_1}"
+      REDIRECT_URI_2: "${vp_redirect_url_2}"
       SUB_DOMAIN: ${sub_domain}
       VSP_URL: "http://verify-service-provider.service-provider.rancher.internal:50400"
     stdin_open: true
@@ -20,11 +23,11 @@ services:
       AWS_ACCOUNT_ID: ${aws_account_id}
       AWS_REGION: ${aws_region}
       ENV_SHORTCODE: "${env_shortcode}"
-      HUB_METADATA_URL: "${vsp_verify_federation_metadata_url}"
-      HUB_SSO_LOCATION: "${vsp_verify_saml_sso_url}"
-      MSA_ENTITY_ID: "https://msa.${env_shortcode}.signin.nhs.uk/matching-service/SAML2/MD"
-      MSA_METADATA_URL: "http://matching-service-adapter.matching-service.rancher.internal:8080/matching-service/SAML2/metadata"
-      SERVICE_ENTITY_ID: "https://vp.${env_shortcode}.signin.nhs.uk/verify-proxy/"
+      HUB_METADATA_URL: "${vsp_hub_metadata_url}"
+      HUB_SSO_LOCATION: "${vsp_hub_sso_location}"
+      MSA_ENTITY_ID: "${vsp_msa_entity_id}"
+      MSA_METADATA_URL: "${vsp_msa_metadata_url}"
+      SERVICE_ENTITY_ID: "https://vp.${sub_domain}${domain}/verify-proxy/"
       VSP_SIGNING_KEY: "${vsp_primary_signing_key}"
       VSP_ENCRYPTION_KEY: "${vsp_primary_encryption_key}"
     stdin_open: true
